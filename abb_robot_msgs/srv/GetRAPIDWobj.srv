@@ -14,6 +14,14 @@
 # Path to the targeted RAPID WObjData symbol.
 abb_robot_msgs/RAPIDSymbolPath path
 
+# Optional TF frame ids. If left empty, the service keeps its default naming:
+# parent_frame_id -> "base_link"
+# user_frame_id   -> ufmec if present, otherwise path.symbol
+# object_frame_id -> <user_frame_id> + "_object"
+string parent_frame_id
+string user_frame_id
+string object_frame_id
+
 ---
 
 #-------------------------------------------------------------------------------

@@ -1,0 +1,35 @@
+#-------------------------------------------------------------------------------
+# Description:
+#   The purpose of this service definition is to define a way to get the value
+#   of a ToolData RAPID symbol defined in an ABB robot controller system.
+#-------------------------------------------------------------------------------
+
+#-------------------------------------------------------------------------------
+# Service request fields
+#-------------------------------------------------------------------------------
+# Path to the targeted RAPID ToolData symbol.
+abb_robot_msgs/RAPIDSymbolPath path
+
+# Optional TF frame ids. If left empty, the service keeps its default naming:
+# parent_frame_id -> "tool0"
+# tool_frame_id   -> path.symbol
+string parent_frame_id
+string tool_frame_id
+
+---
+
+#-------------------------------------------------------------------------------
+# Service response fields
+#-------------------------------------------------------------------------------
+# Tool frame position (x, y, z) in metres.
+float64[3] tool_frame_position
+
+# Tool frame orientation (quaternion x, y, z, w).
+float64[4] tool_frame_orientation
+
+# Service success/failure indicator.
+# Refer to 'abb_robot_msgs/ServiceResponses' for defined error codes.
+uint16 result_code
+
+# Status message (empty if service succeeded).
+string message

@@ -66,6 +66,7 @@ set(SRV_FILES
   "srv/SetSpeedRatio.srv"
   "srv/TriggerWithResultCode.srv"
   "srv/GetRAPIDWobj.srv"
+  "srv/GetRAPIDTool.srv"
 )
 
 rosidl_generate_interfaces(${PROJECT_NAME}
